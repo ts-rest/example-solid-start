@@ -1,4 +1,4 @@
-import { A } from "solid-start";
+import { A } from 'solid-start';
 
 function Nav() {
   return (
@@ -20,12 +20,19 @@ function Nav() {
           <strong>Jobs</strong>
         </A>
         <a
+          style={{ display: 'flex', 'align-items': 'center' }}
           class="github"
-          href="http://github.com/solidjs/solid"
+          href="https://ts-rest.com"
           target="_blank"
           rel="noreferrer"
         >
-          Built with Solid
+          Solid + `@ts-rest`
+          <img
+            height={30}
+            width={30}
+            style={{ 'margin-left': '20px' }}
+            src="https://ts-rest.com/img/logo.svg"
+          />
         </a>
       </nav>
     </header>
