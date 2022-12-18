@@ -1,9 +1,7 @@
-import { createQuery } from '@tanstack/solid-query';
-import { Component, createEffect, createResource, For, Show } from 'solid-js';
+import { Component, For, Show } from 'solid-js';
 import { A, RouteDataArgs, useRouteData } from 'solid-start';
 import Story from '~/components/story';
-import fetchAPI from '~/lib/api';
-import { IStory } from '~/types';
+import { herokuAppClient } from '~/root';
 
 const mapStories = {
   top: 'news',
@@ -17,10 +15,18 @@ export const routeData = ({ location, params }: RouteDataArgs) => {
   const page = () => +location.query.page || 1;
   const type = () => (params.stories || 'top') as keyof typeof mapStories;
 
-  const query = createQuery(
-    () => [type(), page()],
-    () => fetchAPI(`${mapStories[type()]}?page=${page()}`)
-  );
+  const query = herokuAppClient.getNews.createQuery(() => [type(), page()], {
+    params: {
+      get type() {
+        return mapStories[type()];
+      },
+    },
+    query: {
+      get page() {
+        return page();
+      },
+    },
+  });
 
   return { type, query, page };
 };
@@ -68,7 +74,7 @@ const Stories: Component = () => {
       <main class="news-list">
         <Show when={query.data}>
           <ul>
-            <For each={query.data}>
+            <For each={query.data?.body}>
               {(story) => <Story story={story as any} />}
             </For>
           </ul>

@@ -15,6 +15,57 @@ import {
 import Nav from './components/nav';
 import './root.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/solid-query';
+import { initQueryClient } from '@ts-rest/solid-query';
+import { initContract } from '@ts-rest/core';
+import { z } from 'zod';
+import { IStory } from './types';
+
+const c = initContract();
+
+const herokuApi = c.router({
+  getNews: {
+    method: 'GET',
+    path: '/:type',
+    query: z.object({
+      page: z.number().optional(),
+    }),
+    responses: {
+      200: c.response<IStory[]>(),
+    },
+  },
+  getItem: {
+    method: 'GET',
+    path: '/item/:id',
+    responses: {
+      200: c.response<IStory>(),
+    },
+  },
+});
+
+const hackerNewsApi = c.router({
+  getUser: {
+    method: 'GET',
+    path: '/user/:id',
+    responses: {
+      200: z.object({
+        created: z.number(),
+        id: z.string(),
+        karma: z.number(),
+        submitted: z.array(z.number()),
+      }),
+    },
+  },
+});
+
+export const herokuAppClient = initQueryClient(herokuApi, {
+  baseUrl: 'https://node-hnapi.herokuapp.com',
+  baseHeaders: {},
+});
+
+export const hackerNewsClient = initQueryClient(hackerNewsApi, {
+  baseUrl: 'https://hacker-news.firebaseio.com/v0',
+  baseHeaders: {},
+});
 
 const queryClient = new QueryClient();
 
