@@ -1,0 +1,12 @@
+diff --git a/package.json b/package.json
+index 9ca88aa79ba86caad382588e4f3d9204db26b118..2bd0daed9e5d6ec55c1fbd7c0cedd07da25999ac 100644
+--- a/package.json
++++ b/package.json
+@@ -16,7 +16,6 @@
+   "exports": {
+     ".": {
+       "types": "./build/lib/index.d.ts",
+-      "solid": "./build/solid/index.jsx",
+       "import": "./build/lib/index.mjs",
+       "browser": "./build/lib/index.mjs",
+       "require": "./build/lib/index.js",

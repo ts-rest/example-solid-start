@@ -1,11 +1,16 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@tanstack/solid-query@4.20.4':
+    hash: ti64tlkqfszmb2b7zzldlctc7q
+    path: patches/@tanstack__solid-query@4.20.4.patch
+
 specifiers:
   '@solidjs/meta': ^0.28.0
   '@solidjs/router': ^0.5.0
   '@tanstack/solid-query': ^4.20.4
-  '@ts-rest/core': ^3.11.1
-  '@ts-rest/solid-query': ^3.11.1
+  '@ts-rest/core': ^3.11.2
+  '@ts-rest/solid-query': ^3.11.2
   solid-js: ^1.6.2
   solid-start: ^0.2.0
   solid-start-node: ^0.2.0
@@ -17,9 +22,9 @@ specifiers:
 dependencies:
   '@solidjs/meta': 0.28.2_solid-js@1.6.5
   '@solidjs/router': 0.5.1_solid-js@1.6.5
-  '@tanstack/solid-query': 4.20.4_solid-js@1.6.5
-  '@ts-rest/core': 3.11.1_zod@3.20.2
-  '@ts-rest/solid-query': 3.11.1_74dp26gnkltmj5bnktr5iwhbey
+  '@tanstack/solid-query': 4.20.4_ti64tlkqfszmb2b7zzldlctc7q_solid-js@1.6.5
+  '@ts-rest/core': 3.11.2_zod@3.20.2
+  '@ts-rest/solid-query': 3.11.2_f3nama2qtfndou3veqga4q4ovi
   solid-js: 1.6.5
   solid-start: 0.2.7_jfq6s65pvyuo652ytqnpyknqye
   undici: 5.14.0
@@ -1304,7 +1309,7 @@ packages:
     resolution: {integrity: sha512-lhLtGVNJDsJ/DyZXrLzekDEywQqRVykgBqTmkv0La32a/RleILXy6JMLBb7UmS3QCatg/F/0N9/5b0i5j6IKcA==}
     dev: false
 
-  /@tanstack/solid-query/4.20.4_solid-js@1.6.5:
+  /@tanstack/solid-query/4.20.4_ti64tlkqfszmb2b7zzldlctc7q_solid-js@1.6.5:
     resolution: {integrity: sha512-90ANnQLdnnkN8q/mn8O22+u5O1BghqITKdrbUbjvxJ+z2NLLWiEdDqnXo4KVJb7/7EPv8ik9gijO7EzqLp39Jw==}
     peerDependencies:
       solid-js: ^1.5.7
@@ -1312,9 +1317,10 @@ packages:
       '@tanstack/query-core': 4.20.4
       solid-js: 1.6.5
     dev: false
+    patched: true
 
-  /@ts-rest/core/3.11.1_zod@3.20.2:
-    resolution: {integrity: sha512-/Z6zF/eg1BeOtKpAcYPOPACVyNnMurZmbGkF1G94H2pjxRMWRzz/JlUA/urShzxDBEBXxb8ydSjYYqcMsYtnqQ==}
+  /@ts-rest/core/3.11.2_zod@3.20.2:
+    resolution: {integrity: sha512-XEAHiEW0xN9oFW3XWYSlmkECosEbAe6M4HmCc5raBMPaJAS3t7HVZSjrn2q8mnM70T42GweURWt7nV/A7itUZw==}
     peerDependencies:
       tslib: '*'
       zod: 3.x.x
@@ -1327,15 +1333,15 @@ packages:
       zod: 3.20.2
     dev: false
 
-  /@ts-rest/solid-query/3.11.1_74dp26gnkltmj5bnktr5iwhbey:
-    resolution: {integrity: sha512-Ghj9/NIehwzA41tNkrGxEfkX5VpWuM8l3e6Gc/S/bXFN40Bdk22KYuoM390jVf7jXBICHzialpUaX1Frp5TDtw==}
+  /@ts-rest/solid-query/3.11.2_f3nama2qtfndou3veqga4q4ovi:
+    resolution: {integrity: sha512-qzEw4EAR6JUL19x1RpyGor4jhrVSJ1QPjw2qzbcQdNZDmoHSTM+VGwIsqA7OpO0aet1edQiXBok0DAJ3YU3epw==}
     peerDependencies:
       '@tanstack/solid-query': 4.x.x
-      '@ts-rest/core': 3.11.1
+      '@ts-rest/core': 3.11.2
       zod: 3.x.x
     dependencies:
-      '@tanstack/solid-query': 4.20.4_solid-js@1.6.5
-      '@ts-rest/core': 3.11.1_zod@3.20.2
+      '@tanstack/solid-query': 4.20.4_ti64tlkqfszmb2b7zzldlctc7q_solid-js@1.6.5
+      '@ts-rest/core': 3.11.2_zod@3.20.2
       zod: 3.20.2
     dev: false
 
